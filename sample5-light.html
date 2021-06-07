@@ -74,6 +74,26 @@
     // レンダリン
     renderer.render(scene, camera);
     requestAnimationFrame(tick);
+     
+    // 初回実行
+  var update = function() {
+    requestAnimationFrame(update);
+
+    // 箱を回転させる
+    box.rotation.x += 0.01;
+    box.rotation.y += 0.01;
+
+    // 箱を回転させる
+    Sphere.rotation.x += 0.01;
+    Sphere.rotation.y += 0.01;
+
+    // 円柱を回転させる
+    Cylinder.rotation.x += 0.01;
+    Cylinder.rotation.y += 0.01;
+
+    renderer.render(scene, camera);
+  };
+  update();
  
 </script>
 </body>
