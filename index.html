@@ -178,26 +178,21 @@
     // シーンに追加
     scene.add(directionalLight2);
   
-//     // 初回実行
-//     var update = function() {
-//       requestAnimationFrame(update);
+    // 初回実行
+    var update = function() {
+      requestAnimationFrame(update);
   
-//       // 円柱を回転させる
+      // 円柱を回転させる
       
-//       //cylinder.rotation.y += 0.01;
-//       swan.rotation.y += 0.000025;
-//       all.rotation.y += 0.005;
+      //cylinder.rotation.y += 0.01;
+      swan.rotation.y += 0.000025;
+      all.rotation.y += 0.005;
       
   
-//       renderer.render(scene, camera);
-//     };
-//     update();
-    tick();
-    function tick(){
       renderer.render(scene, camera);
-      requestAnimationFrame(tick);
-    }
-   }
+    };
+    update();
+  }
     
   window.addEventListener('DOMContentLoaded', init);
 </script>
