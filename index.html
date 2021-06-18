@@ -43,6 +43,11 @@
     var mat2 = new THREE.MeshPhongMaterial();
     mat2.map = texture2;
     
+    var textureLoader3 = new THREE.TextureLoader();  
+    var texture3 = textureLoader3.load("grass.jpg");
+    var mat3 = new THREE.MeshPhongMaterial();
+    mat3.map = texture3;
+    
 
     //角柱〜円柱
     var cylinderGeometry = new THREE.CylinderGeometry( 10, 1.7, 0.1, 100 );
@@ -62,7 +67,7 @@
     var torusGeometry = new THREE.TorusGeometry( 10, 0.5, 3, 32 ); 
     //半径、ドーナッツの太さ、ドーナッツのチューブ方向の分割数、水平方向の分割数
     var torusMaterial = new THREE. MeshPhongMaterial( { color: 0xb4533c } );
-    var torus = new THREE.Mesh( torusGeometry, torusMaterial );
+    var torus = new THREE.Mesh( torusGeometry, mat3 );
     torus.rotation.x = -Math.PI/2;
     torus.position.set( 0, -1, -5);
     scene.add( torus );
