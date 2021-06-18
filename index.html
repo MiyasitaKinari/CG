@@ -31,7 +31,7 @@
     // カメラを作成
     var camera = new THREE.PerspectiveCamera(45, width / height);
     camera.position.set( 0, 2, 15);
-    //const controls = new THREE.OrbitControls(camera,document.body);
+    const controls = new THREE.OrbitControls(camera,document.body);
   
     // テクスチャー読み込み
     var textureLoader = new THREE.TextureLoader();  
@@ -181,7 +181,7 @@
   
     // 初回実行
     var update = function() {
-      requestAnimationFrame(update);
+      
   
       // 円柱を回転させる
       
@@ -191,17 +191,10 @@
       
   
       renderer.render(scene, camera);
+      requestAnimationFrame(update);
     };
     update();
     
-//           tick();
-
-//         // 毎フレーム時に実行されるループイベントです
-//         function tick() {
-//           // レンダリング
-//           renderer.render(scene, camera);
-//           requestAnimationFrame(tick);
-//         }
     
   }
     
