@@ -41,8 +41,7 @@ mat.map = texture;
 //角柱〜円柱
 var cylinderGeometry = new THREE.CylinderGeometry( 10, 1.7, 0.1, 100 );
 //上の底面の半径、下の底面の半径、高さ、何角柱か
-var cylinderMaterial = new THREE.MeshPhongMaterial( {color: 0x0000ff} );
-var cylinder = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
+var cylinder = new THREE.Mesh( cylinderGeometry, mat );
 cylinder.position.set( 0, -1, -5 );
 scene.add( cylinder );
 
