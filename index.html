@@ -51,12 +51,21 @@
     cylinder.position.set( 0, -1, -5 );
     scene.add( cylinder );
     
+    //平面
     var planeGeometry = new THREE.PlaneGeometry( 50, 50, 50, 50 );
-    //var planeMaterial = new THREE.MeshPhongMaterial( {color: 0x00ff00, side: THREE.DoubleSide} );
     var plane = new THREE.Mesh( planeGeometry, mat2);
     plane.rotation.set( -Math.PI/2, 0, 0 );
     plane.position.set(0,-0.97,-5);
     scene.add( plane );
+    
+    //トーラス
+    var torusGeometry = new THREE.TorusGeometry( 10, 0.5, 3, 32 ); 
+    //半径、ドーナッツの太さ、ドーナッツのチューブ方向の分割数、水平方向の分割数
+    var torusMaterial = new THREE. MeshPhongMaterial( { color: 0xb4533c } );
+    var torus = new THREE.Mesh( torusGeometry, torusMaterial );
+    torus.rotation.x = -Math.PI/2;
+    torus.position.set( 0, -1, -5);
+    scene.add( torus );
     
      // 頭を作成
     var head_g = new THREE.SphereGeometry( 0.3, 32, 32 );
@@ -131,25 +140,25 @@
     var l_eye = new THREE.Mesh( eye_g, material_eye);
     l_eye.position.set(-0.2,1.1,-0.5);
 
-  //白鳥のオブジェクト
-  const swan = new THREE.Group();
-  swan.add(head); // 頭を追加
-  swan.add(body); //体を追加
-  swan.add(body2); //体を追加
-  swan.add(lleg); //左足を追加
-  swan.add(rleg); //右足を追加
-  swan.add(lwin); //左羽を追加
-  swan.add(rwin); //右羽を追加
-  swan.add(beak); //くちばし
-  swan.add(r_eye); //右目
-  swan.add(l_eye); //左目
-  swan.rotation.y = 1;
-  swan.position.set(0,-1,-7);//白鳥グループの原点の位置
-
-  const all = new THREE.Group();
-  all.add(swan); // 白鳥を追加
-  all.position.set(0,0,-5);//全体グループの原点の位置
-  scene.add(all);
+    //白鳥のオブジェクト
+    const swan = new THREE.Group();
+    swan.add(head); // 頭を追加
+    swan.add(body); //体を追加
+    swan.add(body2); //体を追加
+    swan.add(lleg); //左足を追加
+    swan.add(rleg); //右足を追加
+    swan.add(lwin); //左羽を追加
+    swan.add(rwin); //右羽を追加
+    swan.add(beak); //くちばし
+    swan.add(r_eye); //右目
+    swan.add(l_eye); //左目
+    swan.rotation.y = 1;
+    swan.position.set(0,-1,-7);//白鳥グループの原点の位置
+  
+    const all = new THREE.Group();
+    all.add(swan); // 白鳥を追加
+    all.position.set(0,0,-5);//全体グループの原点の位置
+    scene.add(all);
 
 
   
