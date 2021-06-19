@@ -39,6 +39,11 @@
     var mat = new THREE.MeshPhongMaterial();
     mat.map = texture;
     
+    // バンプマップ読み込み
+    var bump = textureLoader.load("water-bump.jpg");
+    mat.bumpMap = bump;
+    mat.bumpscale = 0.2;
+    
     var textureLoader2 = new THREE.TextureLoader();  
     var texture2 = textureLoader2.load("grass.jpg");
     var mat2 = new THREE.MeshPhongMaterial();
