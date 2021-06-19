@@ -96,6 +96,18 @@
     torus3.position.set( 3.7, -2.2, -6.5);
     scene.add( torus3 );
     
+    // 噴水をスプライトで作成
+    var textureLoader = new THREE.TextureLoader();  
+    var texture = textureLoader.load("fountain1.png");
+    const material = new THREE.SpriteMaterial({ map: texture,});
+
+    const sprite = new THREE.Sprite(material);
+    sprite.position.x = 0;
+    sprite.position.y = 0;
+    sprite.position.z = -5;
+    sprite.scale.set(100,100,100);
+    scene.add(sprite);
+    
      // 頭を作成
     var head_g = new THREE.SphereGeometry( 0.3, 32, 32 );
     var material_b = new THREE.MeshPhongMaterial({ color: 0xffffff });
