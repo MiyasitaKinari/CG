@@ -53,12 +53,6 @@
     var texture3 = textureLoader3.load("bric.jpeg");
     var mat3 = new THREE.MeshPhongMaterial();
     mat3.map = texture3;
-    
-    // バンプマップ読み込み
-    var bump3 = textureLoader.load("bric_bump2.jpeg");
-    mat3.bumpMap = bump3;
-    mat3.bumpscale = 0.2;
-    
 
     //角柱〜円柱
     var cylinderGeometry = new THREE.CylinderGeometry( 10, 1.7, 0.1, 100 );
