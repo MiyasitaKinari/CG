@@ -42,7 +42,7 @@
     // バンプマップ読み込み
     var bump = textureLoader.load("water_bump.jpg");
     mat.bumpMap = bump;
-    mat.bumpscale = 0.2;
+    mat.bumpscale = 1;
     
     var textureLoader2 = new THREE.TextureLoader();  
     var texture2 = textureLoader2.load("grass.jpg");
@@ -178,7 +178,7 @@
     swan.add(r_eye); //右目
     swan.add(l_eye); //左目
     swan.rotation.y = 1.4;
-    swan.position.set(0,-1,-7);//白鳥グループの原点の位置
+    swan.position.set(0,-1,-7.1);//白鳥グループの原点の位置
   
     const all = new THREE.Group();
     all.add(swan); // 白鳥を追加
